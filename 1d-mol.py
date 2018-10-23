@@ -43,11 +43,13 @@ def plusOuMoins(nbUtilisateur, nbCoups):
         resultat()
 
 
+# Fonction fermeture lors du signal CTRL+C
 def fermeture(signal, frame):
     resultat()
     sleep(1)
     sys.exit(0)
-    
+
+# Fonction qui affiche le résultat avant la fermeture  
 def resultat():
     print("\nLa solution était "+str(nbAleatoire))
     print("Au revoir !")
