@@ -17,7 +17,6 @@ print("(Entrez 'q' pour quitter)\n")
 
 nbAleatoire = random.randint(0, 100) # Genere un nombre aléatoire entre 0 et 100
 nbCoups = 0
-print(nbAleatoire)
 
 # Fonctions du Plus ou Moins
 def plusOuMoins(nbUtilisateur, nbCoups):
@@ -35,12 +34,16 @@ def plusOuMoins(nbUtilisateur, nbCoups):
                 nbCoups += 1
                 print("\nFélicitation ! Vous avez trouvé en "+str(nbCoups)+" coups.")
                 resultat()
+                sleep(1)
+                sys.exit(0)
                 break 
         else:
             print("Saisie invalide") 
             nbUtilisateur = input("Entrez un nombre valide : ")
     if(nbUtilisateur == "q"):
         resultat()
+        sleep(1)
+        sys.exit(0)
 
 
 # Fonction fermeture lors du signal CTRL+C
