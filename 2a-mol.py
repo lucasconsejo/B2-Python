@@ -8,6 +8,13 @@ import random
 import re
 import signal
 
+
+# Fonction qui affiche le résultat avant la fermeture
+def fermeture(signal, frame):
+    ecrire('La solution etait '+str(nbAleatoire)+'\nAu revoir !')
+    exit()
+
+
 signal.signal(signal.SIGINT, fermeture)
 
 
@@ -24,12 +31,6 @@ def ecrire(msg):
     file = open("saisie-2a-mol.txt", "w")
     file.write(msg)
     file.close()
-
-
-# Fonction qui affiche le résultat avant la fermeture
-def fermeture(signal, frame):
-    ecrire('La solution etait '+str(nbAleatoire)+'\nAu revoir !')
-    exit()
 
 
 # Fonction qui fait tourner le jeu
