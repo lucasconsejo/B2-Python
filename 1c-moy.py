@@ -6,14 +6,6 @@
 
 import re
 
-print('MOYENNE ELEVE')
-pattern = re.compile("^\S[a-zA-Z]+\s[0-9]+$")
-print("(Entrez 'q' pour quitter)\n")
-
-listEleve = {}
-moyenne = []
-
-eleve = input("Entrez un nom d'élève et une note : ") # Saisie de l'élève et de sa note par l'utilisateur
 
 # Fonction pour calculer la moyenne des élèves
 def calculMoy(moyenne):
@@ -25,11 +17,11 @@ def calculMoy(moyenne):
         moy += note
 
     moy = moy/counter
-    print("\nLa moyenne des élèves est de "+str(moy)+"\n") 
+    print("\nLa moyenne des élèves est de "+str(moy)+"\n")
 
 
 # Fonction pour afficher le Top 5 des meilleurs élèves
-# Si le nombre d'élève est inférieur à 5, alors on affiche tous les élèves dans l'ordre des meilleurs
+# Si nbEleve < à 5, alors on affiche tous les élèves dans l'ordre des meilleurs
 def classementEleve(listTrier):
     if len(listTrier) >= 5:
         for i in range(0, 5):
@@ -58,7 +50,17 @@ def topEleve(eleve):
 
     calculMoy(moyenne)
     classementEleve(listTrier)
-    
+
+print('MOYENNE ELEVE')
+pattern = re.compile("^\S[a-zA-Z]+\s[0-9]+$")
+print("(Entrez 'q' pour quitter)\n")
+
+listEleve = {}
+moyenne = []
+
+# Saisie de l'élève et de sa note par l'utilisateur
+eleve = input("Entrez un nom d'élève et une note : ")
+
 topEleve(eleve)
 
 input("\n(Appuyer sur Entrer pour quitter)")

@@ -6,6 +6,27 @@
 
 import re
 
+
+# Fonction ajouter des noms à la liste de noms
+def ajouterNom(nom):
+
+    # Boucle pour saisir plusieurs noms
+    while(nom != "q"):
+        if pattern.match(nom):
+            listeNom.append(nom)
+            nom = input("Entrez un nom : ")
+        else:
+            nom = input("Entrez un nom correct : ")
+
+    if (len(listeNom) > 0):
+        # Trier la liste dans l'ordre alphabétique
+        listeNom.sort()
+
+        # Afficher la liste des noms
+        print('\nVoici la liste des noms :')
+        for nom in listeNom:
+            print(" -"+nom)
+
 print('LISTE DE NOM')
 pattern = re.compile("^\S[a-zA-Z]+$")
 print("(Entrez 'q' pour quitter)\n")
@@ -13,25 +34,6 @@ print("(Entrez 'q' pour quitter)\n")
 nom = input("Entrez un nom : ")
 listeNom = []
 
-#Fonction ajouter des noms à la liste de noms
-def ajouterNom(nom):
-
-    #Boucle pour saisir plusieurs noms
-    while nom != "q" :
-        if pattern.match(nom):
-            listeNom.append(nom)
-            nom = input("Entrez un nom : ")
-        else:
-            nom = input("Entrez un nom correct : ")
-        
-    if len(listeNom) > 0:
-        listeNom.sort() #Trier la liste dans l'ordre alphabétique
-
-        #Afficher la liste des noms
-        print('\nVoici la liste des noms :')
-        for nom in listeNom:
-            print(" -"+nom)
-
 ajouterNom(nom)
-        
+
 input("\n(Appuyer sur Entrer pour quitter)")
