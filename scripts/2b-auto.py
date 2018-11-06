@@ -53,7 +53,7 @@ def plusOuMoins(finBoucle, bornMin, bornMax, nbCoup):
                 bornMin = int(saisie)
                 ecrire("C'est plus")
             else:
-                ecrire('Felicitation\nVous avez trouvez en '+str(nbCoup)+'.\nLa solution etait '+str(nbAleatoire)+'\nAu revoir !')
+                ecrire('Felicitation\nVous avez trouvez en '+str(nbCoup)+' coups.\nLa solution etait '+str(nbAleatoire)+'\nAu revoir !')
                 finBoucle = True
 
 
