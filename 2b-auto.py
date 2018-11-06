@@ -1,8 +1,8 @@
 #! C:\Users\Lucas\AppData\Local\Programs\Python\Python36-32\python.exe
-# 2a-mol
-# Description : Plus ou moins avec saisie à l'aide d'un fichier .txt
-# Auteur : Lucas CONSEJO
-# Date : 05/11/2018
+# 2b-auto
+# Description : Plus ou moins auto
+# Auteur : Lucas CONSEJO & Théo FERREIRA
+# Date : 06/11/2018
 
 import random
 import re
@@ -34,29 +34,38 @@ def ecrire(msg):
 
 
 # Fonction qui fait tourner le jeu
-def plusOuMoins(finBoucle):
+def plusOuMoins(finBoucle, bornMin, bornMax, nbCoup):
     while(finBoucle is False):
+        nbCoup += 1
+        nbOrdi = random.randint(bornMin, bornMax)
+        ecrire(str(nbOrdi))
+
         saisie = lire()
 
         if(pattern.match(saisie)):
             saisie = int(saisie)
 
             if(saisie > nbAleatoire):
+                bornMax = int(saisie)
                 ecrire("C'est moins")
 
             elif(saisie < nbAleatoire):
+                bornMin = int(saisie)
                 ecrire("C'est plus")
             else:
-                ecrire('Felicitation\nLa solution etait '+str(nbAleatoire)+'\nAu revoir !')
+                ecrire('Felicitation\nVous avez trouvez en '+str(nbCoup)+'.\nLa solution etait '+str(nbAleatoire)+'\nAu revoir !')
                 finBoucle = True
 
 
 pattern = re.compile("[0-9]+$")
-
+bornMin = 0
+bornMax = 100
+nbCoup = 0
 
 finBoucle = False
 nbAleatoire = random.randint(0, 100)
+nbOrdi = random.randint(0, 100)
 
 ecrire('Bienvenue dans le Jeu du Plus ou Moins !')
 
-plusOuMoins(finBoucle)
+plusOuMoins(finBoucle, bornMin, bornMax, nbCoup)
