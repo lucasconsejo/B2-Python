@@ -1,7 +1,7 @@
 #! C:\Users\Lucas\AppData\Local\Programs\Python\Python36-32\python.exe
 # 3c-ssh
 # Description : archive sauvegarde optimisé + ssh --> ne fonctionne pas.
-# Auteur : Lucas CONSEJO
+# Auteur : Lucas CONSEJO & Théo FERREIRA
 # Date : 10/11/2018
 
 import signal
